@@ -66,3 +66,5 @@ group :development, :test do
   gem "timecop"
   gem "database_rewinder"
 end
+
+gem 'paperclip'
