@@ -53,4 +53,6 @@ GyazoServer::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :screenshots, only: [:index, :create, :show, :destroy]
 end
