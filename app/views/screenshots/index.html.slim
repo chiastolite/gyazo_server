@@ -8,9 +8,6 @@ table
 
   - @screenshots.each do |screenshot|
     tr
+      td = image_tag(screenshot.image.url(:thumb))
       td = link_to 'Show', screenshot
       td = link_to 'Destroy', screenshot, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Screenshot', new_screenshot_path
