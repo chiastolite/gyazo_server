@@ -68,3 +68,4 @@ group :development, :test do
 end
 
 gem 'paperclip'
+gem 'friendly_id', '~> 5.0'
