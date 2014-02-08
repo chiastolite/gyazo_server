@@ -3,7 +3,7 @@ class ScreenshotsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
-    @screenshots = Screenshot.all
+    @screenshots = Screenshot.where(user_id: current_user)
   end
 
   def show
@@ -12,6 +12,7 @@ class ScreenshotsController < ApplicationController
   def create
     @screenshot = Screenshot.new
     @screenshot.image = params[:imagedata]
+    @screenshot.user = current_user
     @screenshot.save
     render text: screenshot_url(@screenshot)
   end

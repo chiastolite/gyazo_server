@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140111015619) do
+ActiveRecord::Schema.define(version: 20140124131340) do
 
   create_table "screenshots", force: true do |t|
     t.datetime "created_at"
@@ -22,8 +22,16 @@ ActiveRecord::Schema.define(version: 20140111015619) do
     t.datetime "image_updated_at"
     t.string   "title"
     t.string   "slug"
+    t.integer  "user_id"
   end
 
   add_index "screenshots", ["slug"], name: "index_screenshots_on_slug", unique: true
+
+  create_table "users", force: true do |t|
+    t.string   "gyazo_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
